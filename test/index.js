@@ -594,7 +594,18 @@ describe('Amplitude', function(){
       var json = test.fixture('group-basic');
       test
         .group(json.input)
-        .sends('api_key=' + settings.apiKey + '&identification=' + encode(JSON.stringify(json.output)))
+        .sends('api_key=' + settings.apiKey + '&identification=' + encode(JSON.stringify(json.output.data)))
+        .expects(200)
+        .end(done);
+    });
+
+    it('should map group calls with group type correctly', function(done){
+      var json = test.fixture('group-with-traits');
+      var output = json.output;
+      delete output.endpoint;
+      test
+        .group(json.input)
+        .sends('api_key=' + settings.apiKey + '&identification=' + encode(JSON.stringify(json.output.data)))
         .expects(200)
         .end(done);
     });

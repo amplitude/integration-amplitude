@@ -1,0 +1,24 @@
+{
+  "input": {
+    "type": "group",
+    "groupId": "0e8c78ea9d97a7b8185e8632",
+    "traits": {
+      "address": {
+        "country": "some-country"
+      },
+      "groupType": "test-group-type"
+    }
+  },
+  "output": {
+    "endpoint": "/groupidentify",
+    "data": {
+      "group_type": "test-group-type",
+      "group_value": "0e8c78ea9d97a7b8185e8632",
+      "group_properties": {
+        "address": {
+          "country": "some-country"
+        }
+      }
+    }
+  }
+}
